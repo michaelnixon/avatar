@@ -1,0 +1,49 @@
+Building the SmartBodyOgreViewer
+---------------------------------
+* Best to re-use the existing VistualStudio project files
+* You will fix the path to the libraries in Linker->Additional Dependencies
+* Requirements (and assumed paths)
+    * SmartBody sources (C:\src\smartbody)
+    * OgreSDK 1.8.1 (C:\src\OgreSDK_vc10_v1-8-1)
+    * tinyxml 2.6.2 (C:\src\tinyxml_2_6_2)
+    * boost 1.51.0 (C:\src\boost_1_51_0) 
+ 
+IF you build the project using cmake (generator: Visual Studio 10), you will need to fix a number of things in the project file:
+
+* C/C++->Preprocessor->Preprocessor Definitions
+add "WIN32;_WINDOWS;_DEBUG;"
+
+* C/C++->Code Generation->Enable C++ Exceptions
+set to "Yes (/EHsc)
+
+
+
+
+* Linker->Additional Dependencies:
+add "
+kernel32.lib
+user32.lib
+gdi32.lib
+winspool.lib
+shell32.lib
+ole32.lib
+oleaut32.lib
+uuid.lib
+comdlg32.lib
+advapi32.lib
+C:\src\smartbody\core\smartbody\SmartBody\lib\SmartBody_d.lib
+C:\src\smartbody\lib\vhcl\lib\vhcl_d.lib
+C:\src\smartbody\lib\vhmsg\vhmsg-c\lib\vhmsg_d.lib
+C:\src\smartbody\lib\activemq\activemq-cpp\vs2010-build\DebugDLL\activemq-cppd.lib
+C:\src\OgreSDK_vc10_v1-8-1\lib\debug\OgreMain_d.lib
+C:\src\OgreSDK_vc10_v1-8-1\lib\debug\OIS_d.lib
+C:\src\smartbody\lib\bonebus\lib\bonebus_d.lib
+C:\src\smartbody\lib\pthreads\lib\pthreadVSE2.lib
+C:\src\smartbody\lib\vhcl\openal\libs\Win32\alut.lib
+C:\src\tinyxml_2_6_2\tinyxml\Debugtinyxml\tinyxml.lib
+Ws2_32.lib
+C:\src\boost_1_51_0\stage\lib\libboost_system-vc100-mt-gd-1_51.lib
+C:\src\boost_1_51_0\stage\lib\libboost_thread-vc100-mt-gd-1_51.lib
+C:\src\boost_1_51_0\stage\lib\libboost_date_time-vc100-mt-gd-1_51.lib
+C:\src\boost_1_51_0\stage\lib\libboost_chrono-vc100-mt-gd-1_51.lib"
+

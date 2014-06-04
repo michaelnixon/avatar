@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGUID>{386ADE5A-ADE1-4D05-8227-3D1045296D11}</ProjectGUID>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>SmartBodyOgreViewer</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Users\Ulysses\Dropbox\+Coding\avatar\SmartBodyOgreViewer\bin\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">SmartBodyOgreViewer.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">SmartBodyOgreViewer</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\Ulysses\Dropbox\+Coding\avatar\SmartBodyOgreViewer\bin\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">SmartBodyOgreViewer.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">SmartBodyOgreViewer</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:/src/smartbody/core/smartbody/SmartBody/src/sb;C:/src/smartbody/core/smartbody/SmartBody/src;C:/src/smartbody/lib/bonebus/include;C:/src/OgreSDK_vc10_v1-8-1/include;C:/src/OgreSDK_vc10_v1-8-1/include/OGRE;C:/src/smartbody/lib/vhcl/include;C:/src/smartbody/lib/vhmsg/vhmsg-c/include;C:/src/smartbody/lib/boost;C:/src/tinyxml_2_6_2/tinyxml;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>Debug</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>C:/Users/Ulysses/Dropbox/+Coding/avatar/SmartBodyOgreViewer/bin/Debug/SmartBodyOgreViewer.pdb</ProgramDataBaseFileName>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <Optimization>Disabled</Optimization>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:/src/smartbody/core/smartbody/SmartBody/src/sb;C:/src/smartbody/core/smartbody/SmartBody/src;C:/src/smartbody/lib/bonebus/include;C:/src/OgreSDK_vc10_v1-8-1/include;C:/src/OgreSDK_vc10_v1-8-1/include/OGRE;C:/src/smartbody/lib/vhcl/include;C:/src/smartbody/lib/vhmsg/vhmsg-c/include;C:/src/smartbody/lib/boost;C:/src/tinyxml_2_6_2/tinyxml;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:/src/smartbody/core/smartbody/SmartBody/src/sb;C:/src/smartbody/core/smartbody/SmartBody/src;C:/src/smartbody/lib/bonebus/include;C:/src/OgreSDK_vc10_v1-8-1/include;C:/src/OgreSDK_vc10_v1-8-1/include/OGRE;C:/src/smartbody/lib/vhcl/include;C:/src/smartbody/lib/vhmsg/vhmsg-c/include;C:/src/smartbody/lib/boost;C:/src/tinyxml_2_6_2/tinyxml;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;C:\src\smartbody\core\smartbody\SmartBody\lib\SmartBody_d.lib;C:\src\smartbody\lib\vhcl\lib\vhcl_d.lib;C:\src\smartbody\lib\vhmsg\vhmsg-c\lib\vhmsg_d.lib;C:\src\smartbody\lib\activemq\activemq-cpp\vs2010-build\DebugDLL\activemq-cppd.lib;C:\src\OgreSDK_vc10_v1-8-1\lib\debug\OgreMain_d.lib;C:\src\OgreSDK_vc10_v1-8-1\lib\debug\OIS_d.lib;C:\src\smartbody\lib\bonebus\lib\bonebus_d.lib;C:\src\smartbody\lib\pthreads\lib\pthreadVSE2.lib;C:\src\smartbody\lib\vhcl\openal\libs\Win32\alut.lib;C:\src\tinyxml_2_6_2\tinyxml\Debugtinyxml\tinyxml.lib;Ws2_32.lib;C:\src\boost_1_51_0\stage\lib\libboost_system-vc100-mt-gd-1_51.lib;C:\src\boost_1_51_0\stage\lib\libboost_thread-vc100-mt-gd-1_51.lib;C:\src\boost_1_51_0\stage\lib\libboost_date_time-vc100-mt-gd-1_51.lib;C:\src\boost_1_51_0\stage\lib\libboost_chrono-vc100-mt-gd-1_51.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <ImportLibrary>C:/Users/Ulysses/Dropbox/+Coding/avatar/SmartBodyOgreViewer/bin/Debug/SmartBodyOgreViewer.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/Ulysses/Dropbox/+Coding/avatar/SmartBodyOgreViewer/bin/Debug/SmartBodyOgreViewer.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version>
+      </Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:/src/smartbody/core/smartbody/SmartBody/src/sb;C:/src/smartbody/core/smartbody/SmartBody/src;C:/src/smartbody/lib/bonebus/include;C:/src/OgreSDK_vc10_v1-8-1/include;C:/src/OgreSDK_vc10_v1-8-1/include/OGRE;C:/src/smartbody/lib/vhcl/include;C:/src/smartbody/lib/vhmsg/vhmsg-c/include;C:/src/smartbody/lib/boost;C:/src/tinyxml_2_6_2/tinyxml;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <PreprocessorDefinitions>CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>Release</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>C:/Users/Ulysses/Dropbox/+Coding/avatar/SmartBodyOgreViewer/bin/Release/SmartBodyOgreViewer.pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:/src/smartbody/core/smartbody/SmartBody/src/sb;C:/src/smartbody/core/smartbody/SmartBody/src;C:/src/smartbody/lib/bonebus/include;C:/src/OgreSDK_vc10_v1-8-1/include;C:/src/OgreSDK_vc10_v1-8-1/include/OGRE;C:/src/smartbody/lib/vhcl/include;C:/src/smartbody/lib/vhmsg/vhmsg-c/include;C:/src/smartbody/lib/boost;C:/src/tinyxml_2_6_2/tinyxml;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:/src/smartbody/core/smartbody/SmartBody/src/sb;C:/src/smartbody/core/smartbody/SmartBody/src;C:/src/smartbody/lib/bonebus/include;C:/src/OgreSDK_vc10_v1-8-1/include;C:/src/OgreSDK_vc10_v1-8-1/include/OGRE;C:/src/smartbody/lib/vhcl/include;C:/src/smartbody/lib/vhmsg/vhmsg-c/include;C:/src/smartbody/lib/boost;C:/src/tinyxml_2_6_2/tinyxml;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>;-lsmartbody-dll.lib;-lvhcl.lib;-lvhmsg.lib;-lactivemq-cpp.lib;-lbonebus.lib;-lalut.lib;-lWs2_32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <ImportLibrary>C:/Users/Ulysses/Dropbox/+Coding/avatar/SmartBodyOgreViewer/bin/Release/SmartBodyOgreViewer.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/Ulysses/Dropbox/+Coding/avatar/SmartBodyOgreViewer/bin/Release/SmartBodyOgreViewer.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version>
+      </Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule C:/Users/Ulysses/Dropbox/+Coding/avatar/SmartBodyOgreViewer/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files (x86)\CMake 2.8\bin\cmake.exe" -HC:/Users/Ulysses/Dropbox/+Coding/avatar/SmartBodyOgreViewer -BC:/Users/Ulysses/Dropbox/+Coding/avatar/SmartBodyOgreViewer --check-stamp-file C:\Users\Ulysses\Dropbox\+Coding\avatar\SmartBodyOgreViewer\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/Users/Ulysses/Dropbox/+Coding/avatar/SmartBodyOgreViewer/CMakeLists.txt;C:\Users\Ulysses\Dropbox\+Coding\avatar\SmartBodyOgreViewer\CMakeLists.txt;C:\Users\Ulysses\Dropbox\+Coding\avatar\SmartBodyOgreViewer\CMakeFiles\2.8.11.2\CMakeSystem.cmake;C:\Program Files (x86)\CMake 2.8\share\cmake-2.8\Modules\CMakeDetermineCCompiler.cmake;C:\Program Files (x86)\CMake 2.8\share\cmake-2.8\Modules\CMakeDetermineCompiler.cmake;C:\Program Files (x86)\CMake 2.8\share\cmake-2.8\Modules\CMakeDetermineCompilerId.cmake;C:\Program Files (x86)\CMake 2.8\share\cmake-2.8\Modules\CompilerId\VS-10.vcxproj.in;C:\Program Files (x86)\CMake 2.8\share\cmake-2.8\Modules\CMakeClDeps.cmake;C:\Program Files (x86)\CMake 2.8\share\cmake-2.8\Modules\CMakeFindBinUtils.cmake;C:\Program Files (x86)\CMake 2.8\share\cmake-2.8\Modules\CMakeCCompiler.cmake.in;C:\Users\Ulysses\Dropbox\+Coding\avatar\SmartBodyOgreViewer\CMakeFiles\2.8.11.2\CMakeCCompiler.cmake;C:\Program Files (x86)\CMake 2.8\share\cmake-2.8\Modules\CMakeDetermineCXXCompiler.cmake;C:\Program Files (x86)\CMake 2.8\share\cmake-2.8\Modules\CMakeDetermineCompiler.cmake;C:\Program Files (x86)\CMake 2.8\share\cmake-2.8\Modules\Platform\Windows-CXX.cmake;C:\Program Files (x86)\CMake 2.8\share\cmake-2.8\Modules\CMakeDetermineCompilerId.cmake;C:\Program Files (x86)\CMake 2.8\share\cmake-2.8\Modules\CompilerId\VS-10.vcxproj.in;C:\Program Files (x86)\CMake 2.8\share\cmake-2.8\Modules\CMakeClDeps.cmake;C:\Program Files (x86)\CMake 2.8\share\cmake-2.8\Modules\CMakeFindBinUtils.cmake;C:\Program Files (x86)\CMake 2.8\share\cmake-2.8\Modules\CMakeCXXCompiler.cmake.in;C:\Users\Ulysses\Dropbox\+Coding\avatar\SmartBodyOgreViewer\CMakeFiles\2.8.11.2\CMakeCXXCompiler.cmake;C:\Program Files (x86)\CMake 2.8\share\cmake-2.8\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files (x86)\CMake 2.8\share\cmake-2.8\Modules\CMakeGenericSystem.cmake;C:\Program Files (x86)\CMake 2.8\share\cmake-2.8\Modules\Platform\Windows.cmake;C:\Program Files (x86)\CMake 2.8\share\cmake-2.8\Modules\Platform\WindowsPaths.cmake;C:\Program Files (x86)\CMake 2.8\share\cmake-2.8\Modules\CMakeCInformation.cmake;C:\Program Files (x86)\CMake 2.8\share\cmake-2.8\Modules\Platform\Windows.cmake;C:\Program Files (x86)\CMake 2.8\share\cmake-2.8\Modules\Platform\WindowsPaths.cmake;C:\Program Files (x86)\CMake 2.8\share\cmake-2.8\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files (x86)\CMake 2.8\share\cmake-2.8\Modules\CMakeCXXInformation.cmake;C:\Program Files (x86)\CMake 2.8\share\cmake-2.8\Modules\Platform\Windows.cmake;C:\Program Files (x86)\CMake 2.8\share\cmake-2.8\Modules\Platform\WindowsPaths.cmake;C:\Program Files (x86)\CMake 2.8\share\cmake-2.8\Modules\CMakeCommonLanguageInclude.cmake;C:\Users\Ulysses\Dropbox\+Coding\avatar\SmartBodyOgreViewer\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Users\Ulysses\Dropbox\+Coding\avatar\SmartBodyOgreViewer\CMakeFiles\generate.stamp</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule C:/Users/Ulysses/Dropbox/+Coding/avatar/SmartBodyOgreViewer/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"C:\Program Files (x86)\CMake 2.8\bin\cmake.exe" -HC:/Users/Ulysses/Dropbox/+Coding/avatar/SmartBodyOgreViewer -BC:/Users/Ulysses/Dropbox/+Coding/avatar/SmartBodyOgreViewer --check-stamp-file C:\Users\Ulysses\Dropbox\+Coding\avatar\SmartBodyOgreViewer\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/Users/Ulysses/Dropbox/+Coding/avatar/SmartBodyOgreViewer/CMakeLists.txt;C:\Users\Ulysses\Dropbox\+Coding\avatar\SmartBodyOgreViewer\CMakeLists.txt;C:\Users\Ulysses\Dropbox\+Coding\avatar\SmartBodyOgreViewer\CMakeFiles\2.8.11.2\CMakeSystem.cmake;C:\Program Files (x86)\CMake 2.8\share\cmake-2.8\Modules\CMakeDetermineCCompiler.cmake;C:\Program Files (x86)\CMake 2.8\share\cmake-2.8\Modules\CMakeDetermineCompiler.cmake;C:\Program Files (x86)\CMake 2.8\share\cmake-2.8\Modules\CMakeDetermineCompilerId.cmake;C:\Program Files (x86)\CMake 2.8\share\cmake-2.8\Modules\CompilerId\VS-10.vcxproj.in;C:\Program Files (x86)\CMake 2.8\share\cmake-2.8\Modules\CMakeClDeps.cmake;C:\Program Files (x86)\CMake 2.8\share\cmake-2.8\Modules\CMakeFindBinUtils.cmake;C:\Program Files (x86)\CMake 2.8\share\cmake-2.8\Modules\CMakeCCompiler.cmake.in;C:\Users\Ulysses\Dropbox\+Coding\avatar\SmartBodyOgreViewer\CMakeFiles\2.8.11.2\CMakeCCompiler.cmake;C:\Program Files (x86)\CMake 2.8\share\cmake-2.8\Modules\CMakeDetermineCXXCompiler.cmake;C:\Program Files (x86)\CMake 2.8\share\cmake-2.8\Modules\CMakeDetermineCompiler.cmake;C:\Program Files (x86)\CMake 2.8\share\cmake-2.8\Modules\Platform\Windows-CXX.cmake;C:\Program Files (x86)\CMake 2.8\share\cmake-2.8\Modules\CMakeDetermineCompilerId.cmake;C:\Program Files (x86)\CMake 2.8\share\cmake-2.8\Modules\CompilerId\VS-10.vcxproj.in;C:\Program Files (x86)\CMake 2.8\share\cmake-2.8\Modules\CMakeClDeps.cmake;C:\Program Files (x86)\CMake 2.8\share\cmake-2.8\Modules\CMakeFindBinUtils.cmake;C:\Program Files (x86)\CMake 2.8\share\cmake-2.8\Modules\CMakeCXXCompiler.cmake.in;C:\Users\Ulysses\Dropbox\+Coding\avatar\SmartBodyOgreViewer\CMakeFiles\2.8.11.2\CMakeCXXCompiler.cmake;C:\Program Files (x86)\CMake 2.8\share\cmake-2.8\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files (x86)\CMake 2.8\share\cmake-2.8\Modules\CMakeGenericSystem.cmake;C:\Program Files (x86)\CMake 2.8\share\cmake-2.8\Modules\Platform\Windows.cmake;C:\Program Files (x86)\CMake 2.8\share\cmake-2.8\Modules\Platform\WindowsPaths.cmake;C:\Program Files (x86)\CMake 2.8\share\cmake-2.8\Modules\CMakeCInformation.cmake;C:\Program Files (x86)\CMake 2.8\share\cmake-2.8\Modules\Platform\Windows.cmake;C:\Program Files (x86)\CMake 2.8\share\cmake-2.8\Modules\Platform\WindowsPaths.cmake;C:\Program Files (x86)\CMake 2.8\share\cmake-2.8\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files (x86)\CMake 2.8\share\cmake-2.8\Modules\CMakeCXXInformation.cmake;C:\Program Files (x86)\CMake 2.8\share\cmake-2.8\Modules\Platform\Windows.cmake;C:\Program Files (x86)\CMake 2.8\share\cmake-2.8\Modules\Platform\WindowsPaths.cmake;C:\Program Files (x86)\CMake 2.8\share\cmake-2.8\Modules\CMakeCommonLanguageInclude.cmake;C:\Users\Ulysses\Dropbox\+Coding\avatar\SmartBodyOgreViewer\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\Ulysses\Dropbox\+Coding\avatar\SmartBodyOgreViewer\CMakeFiles\generate.stamp</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\ExampleApplication.h" />
+    <ClInclude Include="src\ExampleFrameListener.h" />
+    <ClInclude Include="src\BoneBusHandler.h" />
+    <ClInclude Include="src\OgreFrameListener.h" />
+    <ClInclude Include="src\OgreRenderer.h" />
+    <ClInclude Include="src\SBListener.h" />
+    <ClInclude Include="src\ini.h" />
+    <ClInclude Include="src\MovableText.h" />
+    <ClInclude Include="src\DotSceneLoader.h" />
+    <ClInclude Include="src\ObjectTextDisplay.h" />
+    <ClCompile Include="src\BoneBusHandler.cpp" />
+    <ClCompile Include="src\OgreFrameListener.cpp" />
+    <ClCompile Include="src\OgreRenderer.cpp" />
+    <ClCompile Include="src\SBListener.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\ini.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="src\MovableText.cpp" />
+    <ClCompile Include="src\DotSceneLoader.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:/Users/Ulysses/Dropbox/+Coding/avatar/SmartBodyOgreViewer/ZERO_CHECK.vcxproj">
+      <Project>5C0DBAE3-DCDF-47A4-B61B-36CAE963C53D</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
