@@ -2,6 +2,8 @@
 #include "ExampleApplication.h"
 #include "OgreRenderer.h"
 #include "OgreFrameListener.h"
+//#include <sb/SBScene.h>
+//#include <sb/SBCharacter.h>
 
 SBListener::SBListener(OgreRenderer* app)
 {
@@ -11,8 +13,6 @@ SBListener::SBListener(OgreRenderer* app)
 void SBListener::OnCharacterCreate( const  std::string & name )
 {	     
 	printf( "Character Create!\n" );
-	
-
 }
 
 
@@ -25,7 +25,7 @@ void SBListener::OnPawnCreate( const std::string& name )
 	try
 	{
 		//Create character from characterType
-		ent = m_app->getSceneManager()->createEntity(name, "sphere2.mesh" );						
+		ent = m_app->getSceneManager()->createEntity(name, "sphere.mesh" );						
 	}
 	catch( Ogre::ItemIdentityException& )
 	{
@@ -53,7 +53,6 @@ void SBListener::OnPawnCreate( const std::string& name )
 
 void SBListener::OnCharacterCreate( const  std::string & name, const  std::string & objectClass )
 {	
-	printf("OnCharacterCreate( const  std::string & name, const  std::string & objectClass )\n");
 	//printf("Character create callback\n");
 	std::string logMsg = "Character " + name + " Created. Type is " + objectClass;
 	LogManager::getSingleton().logMessage(logMsg.c_str());
@@ -64,12 +63,13 @@ void SBListener::OnCharacterCreate( const  std::string & name, const  std::strin
 
 	Entity * ent;
 
-	
+
 	try
 	{
 		//Create character from characterType
 
 		ent = m_app->getSceneManager()->createEntity(name, objectClass + ".mesh" );						
+
 	}
 	catch( Ogre::ItemIdentityException& )
 	{
@@ -79,12 +79,14 @@ void SBListener::OnCharacterCreate( const  std::string & name, const  std::strin
 	{
 		if( e.getNumber() == Ogre::Exception::ERR_FILE_NOT_FOUND ) 
 		{
+
 			//Default to existing Brad character
-			ent = m_app->getSceneManager()->createEntity(name, "Brad.mesh" );
-			std::cerr << "Ogre::Exception::ERR_FILE_NOT_FOUND -> create entity using Brad.mesh" << std::endl;
+			//ent = m_app->getSceneManager()->createEntity(name, "ChrBrad.mesh" );
+			LOG("Cannot find mesh named %s. Ignoring mesh for character %s.", objectClass.c_str(), name.c_str());
+			ent = NULL;
 		}
 	}
-		
+
 
 	if (ent == NULL)
 	{
@@ -94,16 +96,19 @@ void SBListener::OnCharacterCreate( const  std::string & name, const  std::strin
 	// Add entity to the scene node
 	SceneNode * mSceneNode = m_app->getSceneManager()->getRootSceneNode()->createChildSceneNode(name);
 	mSceneNode->attachObject(ent);
+
+	//mSceneNode->scale(scaleFactor, scaleFactor, scaleFactor);
+
 	Ogre::Skeleton* skel = ent->getSkeleton();
 	OgreFrameListener* frameListener = m_app->getOgreFrameListener();
 	if (frameListener)
 	{		
 		// insert into character list
 		frameListener->m_characterList.push_back(name);
-		
+
 		// get intial bone position for every character
 		std::map<std::string, Ogre::Vector3> intialBonePositions;
-		
+
 		if (skel)
 		{
 			for (int i = 0; i < skel->getNumBones(); i++)
@@ -151,12 +156,4 @@ void SBListener::OnCharacterDelete( const  std::string & name )
 void SBListener::OnCharacterChange( const  std::string & name )
 {
 	printf( "Character Changed!\n" );
-	
-}
-
-
-
-void SBListener::OnChannel( const std::string & name, const std::string & channelName, const float value){
-	printf( "@@@ SBListener::OnChannel( const std::string & name, const std::string & channelName, const float value)\n" );
-	
 }

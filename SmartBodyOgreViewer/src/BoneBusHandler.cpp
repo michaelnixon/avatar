@@ -4,7 +4,8 @@
 #include "OgreFontManager.h"
 #include <sstream>
 
-void BoneBusHandler::OnClientConnect( const std::string & clientName, void * userData ) {
+void BoneBusHandler::OnClientConnect( const std::string & clientName, void * userData ) 
+{
 	printf( "BoneBusHandler::OnClientConnect( const std::string & clientName, void * userData ) - %s\n", clientName.c_str() );
 }
 
@@ -16,9 +17,10 @@ void BoneBusHandler::OnCreateCharacter( const int characterID, const std::string
 		", characterName.c_str(): " << characterName.c_str() << ", skeletonType: " << skeletonType << std::endl;
 
 
-	if (characterType == "pawn"){
-		return;
-	}
+	if (characterType == "pawn")
+	  {
+	    return;
+	  }
 	OgreRenderer * app = (OgreRenderer *)userData;
 
 	std::stringstream strstr;
@@ -26,21 +28,25 @@ void BoneBusHandler::OnCreateCharacter( const int characterID, const std::string
 	std::string charID = strstr.str();
 	Entity * ent;
 
-	if (app->getSceneManager()->hasEntity(charID.c_str())) {
+	if (app->getSceneManager()->hasEntity(charID.c_str())) 
+	  {
 		// id exists - remove it before creating the character again
 		OnDeleteCharacter(characterID, userData);
 	}
 
-	try {
+	try 
+	  {
 		//Create character from characterType
 		ent = app->getSceneManager()->createEntity( charID.c_str(), characterType + ".mesh" );
 	}
-	catch( Ogre::ItemIdentityException& ) {
+	catch( Ogre::ItemIdentityException& ) 
+	  {
 		//Default to existing Brad character
 		ent = app->getSceneManager()->createEntity( charID.c_str(), "Brad.mesh" );
 		std::cerr << "Ogre::ItemIdentityException -> create entity using Brad.mesh" << std::endl;
 	}
-	catch( Ogre::Exception& e ) {
+	catch( Ogre::Exception& e ) 
+	  {
 		if( e.getNumber() == Ogre::Exception::ERR_FILE_NOT_FOUND ) {
 			//Default to existing Brad character
 			ent = app->getSceneManager()->createEntity( charID.c_str(), "Brad.mesh" );
@@ -87,7 +93,8 @@ void BoneBusHandler::OnCreateCharacter( const int characterID, const std::string
 
 	//Iterate each bone in skeleton
 	Ogre::Skeleton::BoneIterator boneIter = skel->getBoneIterator();
-	while (boneIter.hasMoreElements()) {
+	while (boneIter.hasMoreElements()) 
+	  {
 		Ogre::Bone* bone = boneIter.getNext();
 		cachedInitialBonePositions[bone->getName()] = bone->getInitialPosition();
 	}
@@ -114,7 +121,8 @@ void BoneBusHandler::OnUpdateCharacter( const int characterID, const std::string
 	strstr << characterID;
 	std::string charID = strstr.str();
 
-	if (!app->getSceneManager()->hasEntity(charID.c_str())){
+	if (!app->getSceneManager()->hasEntity(charID.c_str()))
+	  {
 		OnCreateCharacter(characterID, characterType, characterName, skeletonType, userData);	
 	}
 
@@ -139,7 +147,7 @@ void BoneBusHandler::OnDeleteCharacter( const int characterID, void * userData )
 
 }
 
-
+#define SB_SCALE_FACTOR 100 // Ulysses 20140704 this seems to be needed now...
 void BoneBusHandler::OnSetCharacterPosition( const int characterID, const float x, const float y, const float z, void * userData )
 {
 	//printf( "Set Character Position! - %d - %5.2f %5.2f %5.2f\n", characterID, x, y, z );
@@ -149,14 +157,13 @@ void BoneBusHandler::OnSetCharacterPosition( const int characterID, const float 
 	if ( characterID == -1 )
 	{
 		// getCamera the camera
-		app->getCamera()->setPosition( x, y, z );
+		app->getCamera()->setPosition( x * SB_SCALE_FACTOR, y * SB_SCALE_FACTOR, z * SB_SCALE_FACTOR);
 	}
 	else
 	{
 		std::stringstream strstr;
 		strstr << characterID;
 		std::string charID = strstr.str();
-		
 
 		if (!app->getSceneManager()->hasEntity(charID.c_str()))
 			return;
@@ -165,8 +172,9 @@ void BoneBusHandler::OnSetCharacterPosition( const int characterID, const float 
 		if (sceneNode)
 		{
 			Node * node = sceneNode->getChild( charID.c_str() );
-			if (node)
-				node->setPosition( x, y, z );
+			if (node){
+				node->setPosition( x * SB_SCALE_FACTOR, y * SB_SCALE_FACTOR, z * SB_SCALE_FACTOR );
+			}
 		}
 	}
 }
