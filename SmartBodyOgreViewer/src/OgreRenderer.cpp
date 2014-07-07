@@ -157,18 +157,18 @@ void OgreRenderer::createDefaultScene(std::string meshName)
 	mSceneMgr->getRootSceneNode()->createChildSceneNode("plane_node", Vector3( 0, 0, 0 ) )->attachObject( pPlaneEnt );
 	mSceneMgr->getSceneNode("plane_node")->setVisible(false);
 
-	// adding diagnostic scene to measure in feet
+	/*adding diagnostic scene to measure in feet
 	sceneNode = mSceneMgr->getRootSceneNode()->createChildSceneNode("world_scene_ft");
 	sceneEntity = mSceneMgr->createEntity("world_entity_ft","Diagnostic_Level(ft).mesh");
 	sceneNode->attachObject(sceneEntity);
-	sceneNode->setVisible(false);
+	sceneNode->setVisible(false); */
 
 
-	// adding diagnostic scene to measure in cm
+	/*adding diagnostic scene to measure in cm
 	sceneNode = mSceneMgr->getRootSceneNode()->createChildSceneNode("world_scene_cm");
 	sceneEntity = mSceneMgr->createEntity("world_entity_cm","Diagnostic_Level(meter_in_cm).mesh");
 	sceneNode->attachObject(sceneEntity);
-	sceneNode->setVisible(false);
+	sceneNode->setVisible(false); */
 
 
 	// adding generic scene if specified
@@ -191,7 +191,7 @@ void OgreRenderer::createDefaultScene(std::string meshName)
 	}
 
 
-	for(int ii=0; ii<m_initialObjects.size(); ii++){
+	for(unsigned int ii=0; ii<m_initialObjects.size(); ii++){
 		std::string strObjectMesh = m_initialObjects[ii];
 		unsigned pos = strObjectMesh.find(".mesh");
 		std::string strObjectID = strObjectMesh.substr(0, (pos));
@@ -425,8 +425,11 @@ void OgreRenderer::tt_client_callback( const char * op, const char * args, void 
 
 					if(app->getSceneManager()->hasEntity(strID.c_str())){
 						Ogre::Entity* sceneEntity = (Ogre::Entity*)app->getSceneManager()->getEntity( strID.c_str() );
-						sceneEntity->setMaterialName(strMaterial.c_str()); /* need to check that the material exists..*/
-						sceneEntity->getSubEntity(0)->getTechnique()->getPass(0)->getTextureUnitState(0)->setTextureScale(1, 1);
+
+						sceneEntity->setMaterialName(strMaterial.c_str()); 
+						if(sceneEntity->getSubEntity(0)->getTechnique()->getPass(0)->getNumTextureUnitStates()>0){
+							sceneEntity->getSubEntity(0)->getTechnique()->getPass(0)->getTextureUnitState(0)->setTextureScale(1, 1);
+						}
 
 						/*
 						Real x = sceneEntity->getBoundingBox().getSize().x;
@@ -437,9 +440,6 @@ void OgreRenderer::tt_client_callback( const char * op, const char * args, void 
 						std::pair< size_t, size_t > ppp = sceneEntity->getSubEntity(0)->getTechnique()->getPass(0)->getTextureUnitState(0)->getTextureDimensions();
 						printf("texture dimensions: %d, %d\n", ppp.first, ppp.second);
 						*/
-
-
-
 					} else {
 						printf("error setting material. ID %s not found\n", strID.c_str());
 					}

@@ -12,9 +12,9 @@ void BoneBusHandler::OnClientConnect( const std::string & clientName, void * use
 
 void BoneBusHandler::OnCreateCharacter( const int characterID, const std::string & characterType, 
 		const std::string & characterName, const int skeletonType, void * userData ) {
-	std::cerr << "BoneBusHandler::OnCreateCharacter: " << 
-		"characterID: " << characterID << ", characterType.c_str(): " << characterType.c_str() << 
-		", characterName.c_str(): " << characterName.c_str() << ", skeletonType: " << skeletonType << std::endl;
+//	std::cerr << "BoneBusHandler::OnCreateCharacter: " << 
+//		"characterID: " << characterID << ", characterType.c_str(): " << characterType.c_str() << 
+//		", characterName.c_str(): " << characterName.c_str() << ", skeletonType: " << skeletonType << std::endl;
 
 
 	if (characterType == "pawn")
@@ -113,7 +113,7 @@ void BoneBusHandler::OnCreateCharacter( const int characterID, const std::string
 
 void BoneBusHandler::OnUpdateCharacter( const int characterID, const std::string & characterType, const std::string & characterName, const int skeletonType, void * userData )
 {
-	printf( "@@@@ BoneBusHandler::OnUpdateCharacter: %d, %s, %s, %d\n", characterID, characterType.c_str(), characterName.c_str(), skeletonType );
+//	printf( "@@@@ BoneBusHandler::OnUpdateCharacter: %d, %s, %s, %d\n", characterID, characterType.c_str(), characterName.c_str(), skeletonType );
 
 	OgreRenderer * app = (OgreRenderer *)userData;
 
@@ -444,7 +444,7 @@ void BoneBusHandler::OnVisemeId( const int characterID, const std::string viseme
 
 /* added by Ulysses */
 void BoneBusHandler::OnExecScriptFunc( const char * command, void * userData ){
-	printf( "@@@ BoneBusHandler::OnExecScriptFunc( command: %s, void * userData )\n", command );
+	// printf( "@@@ BoneBusHandler::OnExecScriptFunc( command: %s, void * userData )\n", command );
 	
 
 

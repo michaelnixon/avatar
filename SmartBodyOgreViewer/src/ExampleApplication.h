@@ -23,7 +23,10 @@ Description: Base class for all the OGRE examples
 
 #include "Ogre.h"
 #include "OgreConfigFile.h"
+#include <OgreErrorDialog.h>
 #include "ExampleFrameListener.h"
+#include <string>
+#include <algorithm>
 
 #if OGRE_PLATFORM == OGRE_PLATFORM_APPLE
 #include <CoreFoundation/CoreFoundation.h>
@@ -221,37 +224,73 @@ protected:
 
 	}
 
+
+
+
+
 	/// Method which will define the source of resources (other than current folder)
 	virtual void setupResources(void)
 	{
 		// Load resource paths from config file
-		ConfigFile cf;
-		cf.load(mResourcePath + "resources.cfg");
 
-		// Go through all sections & settings in the file
-		ConfigFile::SectionIterator seci = cf.getSectionIterator();
+		std::list<std::string> lstConfigFiles;
+		lstConfigFiles.push_back(mResourcePath + "resources.cfg");
 
-		String secName, typeName, archName;
-		while (seci.hasMoreElements())
-		{
-			secName = seci.peekNextKey();
-			ConfigFile::SettingsMultiMap *settings = seci.getNext();
-			ConfigFile::SettingsMultiMap::iterator i;
-			for (i = settings->begin(); i != settings->end(); ++i)
-			{
-				typeName = i->first;
-				archName = i->second;
-#if OGRE_PLATFORM == OGRE_PLATFORM_APPLE
-				// OS X does not set the working directory relative to the app,
-				// In order to make things portable on OS X we need to provide
-				// the loading with it's own bundle path location
-				ResourceGroupManager::getSingleton().addResourceLocation( String(macBundlePath() + "/" + archName), typeName, secName);
+#ifdef WIN32
+		std::string strHomePath = getenv("USERPROFILE");
+		std::replace( strHomePath.begin(), strHomePath.end(), '\\', '/' );
+		strHomePath.append("/");
 #else
-				ResourceGroupManager::getSingleton().addResourceLocation( archName, typeName, secName);
-				// std::cout << "archName: "  << archName << ", typeName: "  << typeName << ", secName: "  << secName << std::endl;
-
-
+		std::string strHomePath = getenv("HOME");
+		strHomePath.append("/");
 #endif
+		lstConfigFiles.push_back(strHomePath + "resources.cfg");
+
+		while(lstConfigFiles.size()>0){
+			std::string strConfileFilePath = lstConfigFiles.front();
+			lstConfigFiles.pop_front();
+
+			std::cout << "Loading config file: " << strConfileFilePath << std::endl;
+
+			ConfigFile cf;
+			//cf.load(mResourcePath + "resources.cfg");
+
+			try {
+			cf.load(strConfileFilePath.c_str());
+			} 
+			catch (...){
+				std::cerr << "Error reading config file \"" << strConfileFilePath << "\"" << std::endl;
+			}
+
+			// Go through all sections & settings in the file
+			ConfigFile::SectionIterator seci = cf.getSectionIterator();
+
+			String secName, typeName, archName;
+			while (seci.hasMoreElements())
+			{
+				secName = seci.peekNextKey();
+				ConfigFile::SettingsMultiMap *settings = seci.getNext();
+				ConfigFile::SettingsMultiMap::iterator i;
+				for (i = settings->begin(); i != settings->end(); ++i)
+				{
+					typeName = i->first;
+					archName = i->second;
+					try {
+#if OGRE_PLATFORM == OGRE_PLATFORM_APPLE
+						// OS X does not set the working directory relative to the app,
+						// In order to make things portable on OS X we need to provide
+						// the loading with it's own bundle path location
+						ResourceGroupManager::getSingleton().addResourceLocation( String(macBundlePath() + "/" + archName), typeName, secName);
+#else
+						ResourceGroupManager::getSingleton().addResourceLocation( archName, typeName, secName);
+						// std::cout << "archName: "  << archName << ", typeName: "  << typeName << ", secName: "  << secName << std::endl;
+#endif
+					} catch(Ogre::Exception &e) {
+						std::cerr << e.getFullDescription() << std::endl;
+						static Ogre::ErrorDialog * dlg = new Ogre::ErrorDialog();
+						dlg->display(e.what());
+					}
+				}
 			}
 		}
 	}

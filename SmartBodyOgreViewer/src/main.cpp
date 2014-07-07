@@ -78,7 +78,7 @@ void RedirectIOToConsole()
 	// set the screen buffer to be big enough to let us scroll text
 	GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &coninfo);
 	coninfo.dwSize.Y = MAX_CONSOLE_LINES;
-	coninfo.dwSize.X = coninfo.dwSize.X * 1.5;
+	coninfo.dwSize.X = coninfo.dwSize.X * 2;
 
 	SetConsoleScreenBufferSize(GetStdHandle(STD_OUTPUT_HANDLE), coninfo.dwSize);
 	// redirect unbuffered STDOUT to the console

@@ -270,7 +270,6 @@ public:
 
 	virtual bool processUnbufferedMouseInput(const FrameEvent& evt)
 	{
-
 		// Rotation factors, may not be used if the second mouse button is pressed
 		// 2nd mouse button - slide, otherwise rotate
 		const OIS::MouseState &ms = mMouse->getMouseState();
