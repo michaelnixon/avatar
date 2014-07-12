@@ -40,7 +40,7 @@
     </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Midl>
-      <AdditionalIncludeDirectories>C:\src\smartbody\core\smartbody\SmartBody\src\sb;C:\src\smartbody\core\smartbody\SmartBody\src;C:\src\smartbody\lib\bonebus\include;C:\src\OgreSDK_vc10_v1-8-1\include;C:\src\OgreSDK_vc10_v1-8-1\include\OGRE;C:\src\smartbody\lib\vhcl\include;C:\src\smartbody\lib\vhmsg\vhmsg-c\include;C:\src\smartbody\lib\boost;C:\src\tinyxml_2_6_2\tinyxml;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\src\smartbody\core\smartbody\SmartBody\src\sb;C:\src\smartbody\core\smartbody\SmartBody\src;C:\src\smartbody\lib\bonebus\include;C:\src\smartbody\lib\OgreSDK\include;C:\src\smartbody\lib\OgreSDK\include\OGRE;C:\src\smartbody\lib\vhcl\include;C:\src\smartbody\lib\vhmsg\vhmsg-c\include;C:\src\smartbody\lib\boost;C:\src\tinyxml_2_6_2\tinyxml;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -62,7 +62,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Midl>
-      <AdditionalIncludeDirectories>C:\src\smartbody\core\smartbody\SmartBody\src\sb;C:\src\smartbody\core\smartbody\SmartBody\src;C:\src\smartbody\lib\bonebus\include;C:\src\OgreSDK_vc10_v1-8-1\include;C:\src\OgreSDK_vc10_v1-8-1\include\OGRE;C:\src\smartbody\lib\vhcl\include;C:\src\smartbody\lib\vhmsg\vhmsg-c\include;C:\src\smartbody\lib\boost;C:\src\tinyxml_2_6_2\tinyxml;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\src\smartbody\core\smartbody\SmartBody\src\sb;C:\src\smartbody\core\smartbody\SmartBody\src;C:\src\smartbody\lib\bonebus\include;C:\src\smartbody\lib\OgreSDK\include;C:\src\smartbody\lib\OgreSDK\include\OGRE;C:\src\smartbody\lib\vhcl\include;C:\src\smartbody\lib\vhmsg\vhmsg-c\include;C:\src\smartbody\lib\boost;C:\src\tinyxml_2_6_2\tinyxml;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>

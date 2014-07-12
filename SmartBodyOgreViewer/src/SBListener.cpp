@@ -42,7 +42,7 @@ void SBListener::OnPawnCreate( const std::string& name )
 	mSceneNode->attachObject(ent);	
 	OgreFrameListener* frameListener = m_app->getOgreFrameListener();
 
-	mSceneNode->scale( .05f, .05f, .05f );
+	mSceneNode->scale( .05f, .05f, .05f ); //UB: Why???
 	if (frameListener)
 	{
 		frameListener->m_pawnList.push_back(name);

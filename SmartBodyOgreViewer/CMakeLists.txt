@@ -1,8 +1,9 @@
 cmake_minimum_required(VERSION 2.6)
 
 set(SMARTBODY_HOME C:/src/smartbody)
-set(OGRE_HOME C:/src/OgreSDK_vc10_v1-8-1)
-#set(OGRE_HOME C:/src/smartbody/lib/OgreSDK)
+#set(OGRE_HOME C:/src/OgreSDK_vc10_v1-8-1)
+set(OGRE_HOME C:/src/smartbody/lib/OgreSDK)
+
 
 set(TINYXML_HOME C:/src/tinyxml_2_6_2/tinyxml)
 
@@ -17,40 +18,34 @@ include_directories( ${SMARTBODY_HOME}/lib/boost )
 include_directories( ${TINYXML_HOME} )
 
 if(MSVC)
-  SET(SMARTBODY_LIB ${SMARTBODY_HOME}/core/smartbody/SmartBody/lib/SmartBody_d.lib)
-  SET(VHCL_LIB ${SMARTBODY_HOME}/lib/vhcl/lib/vhcl_d.lib)
-  SET(VHMSG_LIB ${SMARTBODY_HOME}/lib/vhmsg/vhmsg-c/lib/vhmsg_d.lib)
+  SET(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} /DNDEGUG")
+
+  SET(SMARTBODY_LIB ${SMARTBODY_HOME}/core/smartbody/SmartBody/lib/SmartBody.lib)
+  SET(VHCL_LIB ${SMARTBODY_HOME}/lib/vhcl/lib/vhcl.lib)
+  SET(VHMSG_LIB ${SMARTBODY_HOME}/lib/vhmsg/vhmsg-c/lib/vhmsg.lib)
   SET(PTHREAD_LIB ${SMARTBODY_HOME}/lib/pthreads/lib/pthreadVSE2.lib)
-#  SET(ACTIVEMQ-CPP_LIB ${SMARTBODY_HOME}/lib/activemq/activemq-cpp/vs2010-build/ReleaseDLL/activemq-cpp.lib)
-  SET(ACTIVEMQ-CPP_LIB ${SMARTBODY_HOME}/lib/activemq/activemq-cpp/vs2010-build/DebugDLL/activemq-cppd.lib)
-# ${SMARTBODY_HOME}/core/smartbody/SmartBody/src/external/glew/glew32.lib
+  SET(ACTIVEMQ-CPP_LIB ${SMARTBODY_HOME}/lib/activemq/activemq-cpp/vs2010-build/ReleaseDLL/activemq-cpp.lib)
 
 
   SET(ALUT_LIB ${SMARTBODY_HOME}/lib/vhcl/openal/libs/Win32/alut.lib)
-#  SET(SNDFILE_LIB ${SMARTBODY_HOME}/sndfile
-  SET(BONEBUS_LIB ${SMARTBODY_HOME}/lib/bonebus/lib/bonebus_d.lib)
+  SET(BONEBUS_LIB ${SMARTBODY_HOME}/lib/bonebus/lib/bonebus.lib)
 
-#  SET(BOOST_LIB 
-#    ${SMARTBODY_HOME}/lib/boost/lib/boost_filesystem-vc100-mt-gd-1_51.lib
-#    ${SMARTBODY_HOME}/lib/boost/lib/boost_system-vc100-mt-gd-1_51.lib 
-#    ${SMARTBODY_HOME}/lib/boost/lib/boost_regex-vc100-mt-gd-1_51.lib 
-#    ${SMARTBODY_HOME}/lib/boost/lib/boost_python-vc100-mt-gd-1_51.lib 
-#    ${SMARTBODY_HOME}/lib/boost/lib/boost_thread-vc100-mt-gd-1_51.lib 
-#    ${SMARTBODY_HOME}/lib/boost/lib/libboost_thread-vc100-mt-gd-1_51.lib 
-#  )
 
 ### -> some boost libraries needed by Ogre 1.8 are missing from the SmartBody source tree; hence we need to use the separately compiled libs (sigh) 
  SET(BOOST_LIB 
-    C:/src/boost_1_51_0/stage/lib/libboost_system-vc100-mt-gd-1_51.lib
-    C:/src/boost_1_51_0/stage/lib/libboost_thread-vc100-mt-gd-1_51.lib
-    C:/src/boost_1_51_0/stage/lib/libboost_date_time-vc100-mt-gd-1_51.lib
-    C:/src/boost_1_51_0/stage/lib/libboost_chrono-vc100-mt-gd-1_51.lib
+   C:/src/boost_1_51_0/stage/lib/libboost_thread-vc100-mt-1_51.lib
+   C:/src/boost_1_51_0/stage/lib/libboost_system-vc100-mt-1_51.lib
+   C:/src/boost_1_51_0/stage/lib/libboost_date_time-vc100-mt-1_51.lib
+   C:/src/boost_1_51_0/stage/lib/libboost_chrono-vc100-mt-1_51.lib
   )
 
 
-  SET(OGREMAIN ${OGRE_HOME}/lib/debug/OgreMain_d.lib)
-  SET(OISLIB ${OGRE_HOME}/lib/debug/OIS_d.lib)
-  SET(TINYXML_LIB ${TINYXML_HOME}/Debugtinyxml/tinyxml.lib)
+
+  SET(OGREMAIN ${OGRE_HOME}/lib/release/OgreMain.lib)
+  SET(OISLIB ${OGRE_HOME}/lib/release/OIS.lib)
+  SET(TINYXML_LIB ${TINYXML_HOME}/Releasetinyxml/tinyxml.lib)
+
+
 
 
 			
@@ -127,10 +122,10 @@ target_link_libraries( SmartBodyOgreViewer
    ${BOOST_LIB}
 )
 
-set( APP_LIBRARY_SOURCE_PATHS
-    ${PROJECT_SOURCE_DIR}/core/ogre-viewer/bin
-    ${PROJECT_SOURCE_DIR}/core/smartbody/sbm/bin
-)
+###set( APP_LIBRARY_SOURCE_PATHS
+###    ${PROJECT_SOURCE_DIR}/core/ogre-viewer/bin
+###    ${PROJECT_SOURCE_DIR}/core/smartbody/sbm/bin
+###)
 
 set_target_properties( SmartBodyOgreViewer
 	PROPERTIES

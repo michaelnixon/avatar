@@ -147,7 +147,7 @@ void BoneBusHandler::OnDeleteCharacter( const int characterID, void * userData )
 
 }
 
-#define SB_SCALE_FACTOR 100 // Ulysses 20140704 this seems to be needed now...
+#define SB_SCALE_FACTOR 100 // Ulysses 20140704 this seems to be needed now... 
 void BoneBusHandler::OnSetCharacterPosition( const int characterID, const float x, const float y, const float z, void * userData )
 {
 	//printf( "Set Character Position! - %d - %5.2f %5.2f %5.2f\n", characterID, x, y, z );
@@ -379,9 +379,9 @@ void BoneBusHandler::OnBonePositions( const bonebus::BulkBonePositions * bulkBon
 
 				
 				//Add initial bone position to delta
-				v.x = initialBonePosition.x + bulkBonePositions->bones[ i ].pos_x;
-				v.y = initialBonePosition.y + bulkBonePositions->bones[ i ].pos_y;
-				v.z = initialBonePosition.z + bulkBonePositions->bones[ i ].pos_z;
+				v.x = initialBonePosition.x + bulkBonePositions->bones[ i ].pos_x * 100; //UB: *100 this is a hack to get the facial animations to work... (20140712)
+				v.y = initialBonePosition.y + bulkBonePositions->bones[ i ].pos_y * 100;
+				v.z = initialBonePosition.z + bulkBonePositions->bones[ i ].pos_z * 100;
 				
 
 				bone->setPosition( v );

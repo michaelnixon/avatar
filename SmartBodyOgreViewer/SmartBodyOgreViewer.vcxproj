@@ -31,28 +31,27 @@
   <ImportGroup Label="ExtensionSettings">
   </ImportGroup>
   <ImportGroup Label="PropertySheets">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-  </ImportGroup>
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />  </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup>
-    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Users\Ulysses\Dropbox\+Coding\avatar\SmartBodyOgreViewer\bin\Debug\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">SmartBodyOgreViewer.dir\Debug\</IntDir>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">SmartBodyOgreViewer</TargetName>
-    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.exe</TargetExt>
-    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
-    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\Ulysses\Dropbox\+Coding\avatar\SmartBodyOgreViewer\bin\Release\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">SmartBodyOgreViewer.dir\Release\</IntDir>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">SmartBodyOgreViewer</TargetName>
-    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.exe</TargetExt>
-    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</LinkIncremental>
-    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</GenerateManifest>
-  </PropertyGroup>
+    <PropertyGroup>
+      <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Users\Ulysses\Dropbox\+Coding\avatar\SmartBodyOgreViewer\bin\Debug\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">SmartBodyOgreViewer.dir\Debug\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">SmartBodyOgreViewer</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.exe</TargetExt>
+      <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+      <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</GenerateManifest>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\Ulysses\Dropbox\+Coding\avatar\SmartBodyOgreViewer\bin\Release\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">SmartBodyOgreViewer.dir\Release\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">SmartBodyOgreViewer</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.exe</TargetExt>
+      <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</LinkIncremental>
+      <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</GenerateManifest>
+    </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <AdditionalOptions> /Zm1000 %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalIncludeDirectories>C:\src\smartbody\core\smartbody\SmartBody\src;C:\src\smartbody\lib\bonebus\include;C:\src\OgreSDK_vc10_v1-8-1\include;C:\src\OgreSDK_vc10_v1-8-1\include\OGRE;C:\src\smartbody\lib\vhcl\include;C:\src\smartbody\lib\vhmsg\vhmsg-c\include;C:\src\smartbody\lib\boost;C:\src\tinyxml_2_6_2\tinyxml;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\src\smartbody\core\smartbody\SmartBody\src\sb;C:\src\smartbody\core\smartbody\SmartBody\src;C:\src\smartbody\lib\bonebus\include;C:\src\smartbody\lib\OgreSDK\include;C:\src\smartbody\lib\OgreSDK\include\OGRE;C:\src\smartbody\lib\vhcl\include;C:\src\smartbody\lib\vhmsg\vhmsg-c\include;C:\src\smartbody\lib\boost;C:\src\tinyxml_2_6_2\tinyxml;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>Debug/</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <CompileAs>CompileAsCpp</CompileAs>
@@ -64,15 +63,15 @@
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;NDEGUG;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\src\smartbody\core\smartbody\SmartBody\src\sb;C:\src\smartbody\core\smartbody\SmartBody\src;C:\src\smartbody\lib\bonebus\include;C:\src\OgreSDK_vc10_v1-8-1\include;C:\src\OgreSDK_vc10_v1-8-1\include\OGRE;C:\src\smartbody\lib\vhcl\include;C:\src\smartbody\lib\vhmsg\vhmsg-c\include;C:\src\smartbody\lib\boost;C:\src\tinyxml_2_6_2\tinyxml;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;NDEGUG;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\src\smartbody\core\smartbody\SmartBody\src\sb;C:\src\smartbody\core\smartbody\SmartBody\src;C:\src\smartbody\lib\bonebus\include;C:\src\smartbody\lib\OgreSDK\include;C:\src\smartbody\lib\OgreSDK\include\OGRE;C:\src\smartbody\lib\vhcl\include;C:\src\smartbody\lib\vhmsg\vhmsg-c\include;C:\src\smartbody\lib\boost;C:\src\tinyxml_2_6_2\tinyxml;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\src\smartbody\core\smartbody\SmartBody\src\sb;C:\src\smartbody\core\smartbody\SmartBody\src;C:\src\smartbody\lib\bonebus\include;C:\src\OgreSDK_vc10_v1-8-1\include;C:\src\OgreSDK_vc10_v1-8-1\include\OGRE;C:\src\smartbody\lib\vhcl\include;C:\src\smartbody\lib\vhmsg\vhmsg-c\include;C:\src\smartbody\lib\boost;C:\src\tinyxml_2_6_2\tinyxml;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\src\smartbody\core\smartbody\SmartBody\src\sb;C:\src\smartbody\core\smartbody\SmartBody\src;C:\src\smartbody\lib\bonebus\include;C:\src\smartbody\lib\OgreSDK\include;C:\src\smartbody\lib\OgreSDK\include\OGRE;C:\src\smartbody\lib\vhcl\include;C:\src\smartbody\lib\vhmsg\vhmsg-c\include;C:\src\smartbody\lib\boost;C:\src\tinyxml_2_6_2\tinyxml;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -80,14 +79,13 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;C:\src\smartbody\core\smartbody\SmartBody\lib\SmartBody_d.lib;C:\src\smartbody\lib\vhcl\lib\vhcl_d.lib;C:\src\smartbody\lib\vhmsg\vhmsg-c\lib\vhmsg_d.lib;C:\src\smartbody\lib\activemq\activemq-cpp\vs2010-build\DebugDLL\activemq-cppd.lib;C:\src\OgreSDK_vc10_v1-8-1\lib\debug\OgreMain_d.lib;C:\src\OgreSDK_vc10_v1-8-1\lib\debug\OIS_d.lib;C:\src\smartbody\lib\bonebus\lib\bonebus_d.lib;C:\src\smartbody\lib\pthreads\lib\pthreadVSE2.lib;C:\src\smartbody\lib\vhcl\openal\libs\Win32\alut.lib;C:\src\tinyxml_2_6_2\tinyxml\Debugtinyxml\tinyxml.lib;Ws2_32.lib;C:\src\boost_1_51_0\stage\lib\libboost_system-vc100-mt-gd-1_51.lib;C:\src\boost_1_51_0\stage\lib\libboost_thread-vc100-mt-gd-1_51.lib;C:\src\boost_1_51_0\stage\lib\libboost_date_time-vc100-mt-gd-1_51.lib;C:\src\boost_1_51_0\stage\lib\libboost_chrono-vc100-mt-gd-1_51.lib</AdditionalDependencies>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;C:\src\smartbody\core\smartbody\SmartBody\lib\SmartBody.lib;C:\src\smartbody\lib\vhcl\lib\vhcl.lib;C:\src\smartbody\lib\vhmsg\vhmsg-c\lib\vhmsg.lib;C:\src\smartbody\lib\activemq\activemq-cpp\vs2010-build\ReleaseDLL\activemq-cpp.lib;C:\src\smartbody\lib\OgreSDK\lib\release\OgreMain.lib;C:\src\smartbody\lib\OgreSDK\lib\release\OIS.lib;C:\src\smartbody\lib\bonebus\lib\bonebus.lib;C:\src\smartbody\lib\pthreads\lib\pthreadVSE2.lib;C:\src\smartbody\lib\vhcl\openal\libs\Win32\alut.lib;C:\src\tinyxml_2_6_2\tinyxml\Releasetinyxml\tinyxml.lib;Ws2_32.lib;C:\src\boost_1_51_0\stage\lib\libboost_thread-vc100-mt-1_51.lib;C:\src\boost_1_51_0\stage\lib\libboost_system-vc100-mt-1_51.lib;C:\src\boost_1_51_0\stage\lib\libboost_date_time-vc100-mt-1_51.lib;C:\src\boost_1_51_0\stage\lib\libboost_chrono-vc100-mt-1_51.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <ImportLibrary>C:/Users/Ulysses/Dropbox/+Coding/avatar/SmartBodyOgreViewer/bin/Debug/SmartBodyOgreViewer.lib</ImportLibrary>
       <ProgramDataBaseFile>C:/Users/Ulysses/Dropbox/+Coding/avatar/SmartBodyOgreViewer/bin/Debug/SmartBodyOgreViewer.pdb</ProgramDataBaseFile>
       <SubSystem>Windows</SubSystem>
-      <Version>
-      </Version>
+      <Version></Version>
     </Link>
     <ProjectReference>
       <LinkLibraryDependencies>false</LinkLibraryDependencies>
@@ -96,24 +94,23 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <AdditionalOptions> /Zm1000 %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalIncludeDirectories>C:\src\smartbody\core\smartbody\SmartBody\src\sb;C:\src\smartbody\core\smartbody\SmartBody\src;C:\src\smartbody\lib\bonebus\include;C:\src\OgreSDK_vc10_v1-8-1\include;C:\src\OgreSDK_vc10_v1-8-1\include\OGRE;C:\src\smartbody\lib\vhcl\include;C:\src\smartbody\lib\vhmsg\vhmsg-c\include;C:\src\smartbody\lib\boost;C:\src\tinyxml_2_6_2\tinyxml;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\src\smartbody\core\smartbody\SmartBody\src\sb;C:\src\smartbody\core\smartbody\SmartBody\src;C:\src\smartbody\lib\bonebus\include;C:\src\smartbody\lib\OgreSDK\include;C:\src\smartbody\lib\OgreSDK\include\OGRE;C:\src\smartbody\lib\vhcl\include;C:\src\smartbody\lib\vhmsg\vhmsg-c\include;C:\src\smartbody\lib\boost;C:\src\tinyxml_2_6_2\tinyxml;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>Release/</AssemblerListingLocation>
       <CompileAs>CompileAsCpp</CompileAs>
       <ExceptionHandling>Sync</ExceptionHandling>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <WarningLevel>Level3</WarningLevel>
-      <DebugInformationFormat>
-      </DebugInformationFormat>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DebugInformationFormat></DebugInformationFormat>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\src\smartbody\core\smartbody\SmartBody\src\sb;C:\src\smartbody\core\smartbody\SmartBody\src;C:\src\smartbody\lib\bonebus\include;C:\src\OgreSDK_vc10_v1-8-1\include;C:\src\OgreSDK_vc10_v1-8-1\include\OGRE;C:\src\smartbody\lib\vhcl\include;C:\src\smartbody\lib\vhmsg\vhmsg-c\include;C:\src\smartbody\lib\boost;C:\src\tinyxml_2_6_2\tinyxml;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\src\smartbody\core\smartbody\SmartBody\src\sb;C:\src\smartbody\core\smartbody\SmartBody\src;C:\src\smartbody\lib\bonebus\include;C:\src\smartbody\lib\OgreSDK\include;C:\src\smartbody\lib\OgreSDK\include\OGRE;C:\src\smartbody\lib\vhcl\include;C:\src\smartbody\lib\vhmsg\vhmsg-c\include;C:\src\smartbody\lib\boost;C:\src\tinyxml_2_6_2\tinyxml;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\src\smartbody\core\smartbody\SmartBody\src\sb;C:\src\smartbody\core\smartbody\SmartBody\src;C:\src\smartbody\lib\bonebus\include;C:\src\OgreSDK_vc10_v1-8-1\include;C:\src\OgreSDK_vc10_v1-8-1\include\OGRE;C:\src\smartbody\lib\vhcl\include;C:\src\smartbody\lib\vhmsg\vhmsg-c\include;C:\src\smartbody\lib\boost;C:\src\tinyxml_2_6_2\tinyxml;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\src\smartbody\core\smartbody\SmartBody\src\sb;C:\src\smartbody\core\smartbody\SmartBody\src;C:\src\smartbody\lib\bonebus\include;C:\src\smartbody\lib\OgreSDK\include;C:\src\smartbody\lib\OgreSDK\include\OGRE;C:\src\smartbody\lib\vhcl\include;C:\src\smartbody\lib\vhmsg\vhmsg-c\include;C:\src\smartbody\lib\boost;C:\src\tinyxml_2_6_2\tinyxml;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -121,14 +118,13 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;C:\src\smartbody\core\smartbody\SmartBody\lib\SmartBody_d.lib;C:\src\smartbody\lib\vhcl\lib\vhcl_d.lib;C:\src\smartbody\lib\vhmsg\vhmsg-c\lib\vhmsg_d.lib;C:\src\smartbody\lib\activemq\activemq-cpp\vs2010-build\DebugDLL\activemq-cppd.lib;C:\src\OgreSDK_vc10_v1-8-1\lib\debug\OgreMain_d.lib;C:\src\OgreSDK_vc10_v1-8-1\lib\debug\OIS_d.lib;C:\src\smartbody\lib\bonebus\lib\bonebus_d.lib;C:\src\smartbody\lib\pthreads\lib\pthreadVSE2.lib;C:\src\smartbody\lib\vhcl\openal\libs\Win32\alut.lib;C:\src\tinyxml_2_6_2\tinyxml\Debugtinyxml\tinyxml.lib;Ws2_32.lib;C:\src\boost_1_51_0\stage\lib\libboost_system-vc100-mt-gd-1_51.lib;C:\src\boost_1_51_0\stage\lib\libboost_thread-vc100-mt-gd-1_51.lib;C:\src\boost_1_51_0\stage\lib\libboost_date_time-vc100-mt-gd-1_51.lib;C:\src\boost_1_51_0\stage\lib\libboost_chrono-vc100-mt-gd-1_51.lib</AdditionalDependencies>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;C:\src\smartbody\core\smartbody\SmartBody\lib\SmartBody.lib;C:\src\smartbody\lib\vhcl\lib\vhcl.lib;C:\src\smartbody\lib\vhmsg\vhmsg-c\lib\vhmsg.lib;C:\src\smartbody\lib\activemq\activemq-cpp\vs2010-build\ReleaseDLL\activemq-cpp.lib;C:\src\smartbody\lib\OgreSDK\lib\release\OgreMain.lib;C:\src\smartbody\lib\OgreSDK\lib\release\OIS.lib;C:\src\smartbody\lib\bonebus\lib\bonebus.lib;C:\src\smartbody\lib\pthreads\lib\pthreadVSE2.lib;C:\src\smartbody\lib\vhcl\openal\libs\Win32\alut.lib;C:\src\tinyxml_2_6_2\tinyxml\Releasetinyxml\tinyxml.lib;Ws2_32.lib;C:\src\boost_1_51_0\stage\lib\libboost_thread-vc100-mt-1_51.lib;C:\src\boost_1_51_0\stage\lib\libboost_system-vc100-mt-1_51.lib;C:\src\boost_1_51_0\stage\lib\libboost_date_time-vc100-mt-1_51.lib;C:\src\boost_1_51_0\stage\lib\libboost_chrono-vc100-mt-1_51.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <ImportLibrary>C:/Users/Ulysses/Dropbox/+Coding/avatar/SmartBodyOgreViewer/bin/Release/SmartBodyOgreViewer.lib</ImportLibrary>
       <ProgramDataBaseFile>C:/Users/Ulysses/Dropbox/+Coding/avatar/SmartBodyOgreViewer/bin/Release/SmartBodyOgreViewer.pdb</ProgramDataBaseFile>
       <SubSystem>Windows</SubSystem>
-      <Version>
-      </Version>
+      <Version></Version>
     </Link>
     <ProjectReference>
       <LinkLibraryDependencies>false</LinkLibraryDependencies>
@@ -173,17 +169,17 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="src\MovableText.h" />
     <ClInclude Include="src\DotSceneLoader.h" />
     <ClInclude Include="src\ObjectTextDisplay.h" />
-    <ClCompile Include="src\BoneBusHandler.cpp" />
-    <ClCompile Include="src\OgreFrameListener.cpp" />
-    <ClCompile Include="src\OgreRenderer.cpp" />
-    <ClCompile Include="src\SBListener.cpp" />
-    <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\ini.c">
+    <ClCompile Include="src\BoneBusHandler.cpp"  />
+    <ClCompile Include="src\OgreFrameListener.cpp"  />
+    <ClCompile Include="src\OgreRenderer.cpp"  />
+    <ClCompile Include="src\SBListener.cpp"  />
+    <ClCompile Include="src\main.cpp"  />
+    <ClCompile Include="src\ini.c" >
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">CompileAsC</CompileAs>
     </ClCompile>
-    <ClCompile Include="src\MovableText.cpp" />
-    <ClCompile Include="src\DotSceneLoader.cpp" />
+    <ClCompile Include="src\MovableText.cpp"  />
+    <ClCompile Include="src\DotSceneLoader.cpp"  />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="C:/Users/Ulysses/Dropbox/+Coding/avatar/SmartBodyOgreViewer/ZERO_CHECK.vcxproj">

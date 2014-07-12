@@ -11,7 +11,8 @@ Building the SmartBodyOgreViewer
 IF you build the project using cmake (generator: Visual Studio 10), you will need to fix a number of things in the project file:
 
 * C/C++->Preprocessor->Preprocessor Definitions
-add "WIN32;_WINDOWS;_DEBUG;"
+DEBUG: add "WIN32;_WINDOWS;_DEBUG;"
+RELEASE: add "WIN32;_WINDOWS;NDEBUG;"
 
 * C/C++->Code Generation->Enable C++ Exceptions
 set to "Yes (/EHsc)
@@ -42,8 +43,12 @@ C:\src\smartbody\lib\pthreads\lib\pthreadVSE2.lib
 C:\src\smartbody\lib\vhcl\openal\libs\Win32\alut.lib
 C:\src\tinyxml_2_6_2\tinyxml\Debugtinyxml\tinyxml.lib
 Ws2_32.lib
+DEBUG:
 C:\src\boost_1_51_0\stage\lib\libboost_system-vc100-mt-gd-1_51.lib
 C:\src\boost_1_51_0\stage\lib\libboost_thread-vc100-mt-gd-1_51.lib
 C:\src\boost_1_51_0\stage\lib\libboost_date_time-vc100-mt-gd-1_51.lib
 C:\src\boost_1_51_0\stage\lib\libboost_chrono-vc100-mt-gd-1_51.lib"
 
+C:\src\smartbody\lib\boost\lib\boost_system-vc100-mt-1_51.lib
+C:\src\smartbody\lib\boost\lib\boost_thread-vc100-mt-1_51.lib
+C:\src\smartbody\lib\boost\lib\boost_date_time-vc100-mt-1_51.lib
