@@ -1,0 +1,533 @@
+material ben_pants_01_-_Default
+{
+	technique
+	{
+		pass
+		{
+			ambient 0 0 0 1
+			diffuse 0.917647 0.956863 0.992157 1
+			specular 0.154076 0.154076 0.154076 1 56.4386
+
+			texture_unit
+			{
+				texture ben_pantsTEX_Lores.jpg
+			}
+		}
+
+	}
+
+}
+
+
+
+material ben_shoe_l_1_ben_shoe_l
+{
+	technique
+	{
+		pass
+		{
+			ambient 0 0 0 1
+			diffuse 0.988235 0.972549 0.972549 1
+			specular 0.0489761 0.0489761 0.0489761 1 56.4386
+
+			texture_unit
+			{
+				texture ben_shoeTEX_Lores.jpg
+			}
+		}
+
+	}
+
+}
+
+
+
+material ben_shoe_l_1_eyelet
+{
+	technique
+	{
+		pass
+		{
+			ambient 0 0 0 1
+			diffuse 0.988235 0.972549 0.972549 1
+			specular 1 1 1 1 17.3697
+
+			texture_unit
+			{
+				texture ben_shoeTEX_Lores.jpg
+			}
+		}
+
+	}
+
+}
+
+
+
+material ben_shoe_l_1_sole
+{
+	technique
+	{
+		pass
+		{
+			ambient 0 0 0 1
+			diffuse 0.988235 0.972549 0.972549 1
+			specular 0.921569 0.921569 0.921569 1 33.2193
+
+			texture_unit
+			{
+				texture ben_shoeTEX_Lores.jpg
+			}
+		}
+
+	}
+
+}
+
+
+
+material ben_tshirt_ben_tshirt
+{
+	technique
+	{
+		pass
+		{
+			ambient 0 0 0 1
+			diffuse 0.988235 0.972549 0.972549 1
+			specular 0.0489761 0.0489761 0.0489761 1 56.4386
+
+			texture_unit
+			{
+				texture ben_tshirtTEX_Lores.jpg
+			}
+		}
+
+	}
+
+}
+
+
+
+material BenCasual_Body
+{
+	technique
+	{
+		pass
+		{
+			ambient 0 0 0 1
+			specular 0.0392157 0.0392157 0.0705882 1 41.6992
+
+			texture_unit
+			{
+				texture Ben_Body_Lores.jpg
+			}
+		}
+
+	}
+
+}
+
+
+
+material BenCasual_EyeLashes
+{
+	technique
+	{
+		pass
+		{
+			ambient 0 0 0 1
+			diffuse 0.364706 0.270588 0.215686 1
+			specular 0.172549 0.172549 0.172549 1 41.6992
+			scene_blend add
+
+			texture_unit
+			{
+				colour_op_ex blend_manual src_manual src_current 0 1 1 1
+				colour_op_multipass_fallback dest_colour zero
+				alpha_op_ex source1 src_manual src_current 0
+			}
+		}
+
+	}
+
+}
+
+
+
+material BenCasual_FingerNails
+{
+	technique
+	{
+		pass
+		{
+			ambient 0 0 0 1
+			specular 0.0392157 0.0392157 0.0705882 1 49.0691
+
+			texture_unit
+			{
+				texture Ben_Body_Lores.jpg
+			}
+		}
+
+	}
+
+}
+
+
+
+material BenCasual_Head
+{
+	technique
+	{
+		pass
+		{
+			ambient 0 0 0 1
+			specular 0.0392157 0.0392157 0.0705882 1 41.6992
+
+			texture_unit
+			{
+				texture Ben_Head_Lores.jpg
+			}
+		}
+
+	}
+
+}
+
+
+
+material BenCasual_InsideEyes
+{
+	technique
+	{
+		pass
+		{
+			ambient 0 0 0 1
+			specular 0.0392157 0.0392157 0.0705882 1 41.6992
+
+			texture_unit
+			{
+				texture Ben_Body_Lores.jpg
+			}
+		}
+
+	}
+
+}
+
+
+
+material BenCasual_InsideMouth
+{
+	technique
+	{
+		pass
+		{
+			ambient 0 0 0 1
+			specular 0.0392157 0.0392157 0.0705882 1 49.0689
+
+			texture_unit
+			{
+				texture Ben_Mouth_Gum_Lores.jpg
+			}
+		}
+
+	}
+
+}
+
+
+
+material BenCasual_LeftEyeIris
+{
+	technique
+	{
+		pass
+		{
+			ambient 0 0 0 1
+			specular 0.0392157 0.0392157 0.0705882 1 41.6992
+
+			texture_unit
+			{
+				texture Ben_Eye_Brown_Lores.jpg
+			}
+		}
+
+	}
+
+}
+
+
+
+material BenCasual_LeftEyeOuter
+{
+	technique
+	{
+		pass
+		{
+			ambient 0 0 0 1
+			specular 1 1 1 1 56.4386
+			scene_blend add
+
+			texture_unit
+			{
+				texture Ben_Eye_Reflect.jpg
+				colour_op_ex add src_texture src_current
+				colour_op_multipass_fallback one one
+				env_map cubic_reflection
+			}
+
+			texture_unit
+			{
+				colour_op_ex blend_manual src_manual src_current 0.00999999 1 1 1
+				colour_op_multipass_fallback dest_colour zero
+				alpha_op_ex source1 src_manual src_current 0.00999999
+			}
+		}
+
+	}
+
+}
+
+
+
+material BenCasual_LeftEyePupil
+{
+	technique
+	{
+		pass
+		{
+			ambient 0 0 0 1
+			specular 0 0 0 1 41.6992
+
+			texture_unit
+			{
+				texture Ben_Eye_Brown_Lores.jpg
+			}
+		}
+
+	}
+
+}
+
+
+
+material BenCasual_LeftEyeWhite
+{
+	technique
+	{
+		pass
+		{
+			ambient 0 0 0 1
+			diffuse 0.790588 0.790588 0.790588 1
+			specular 0.0392157 0.0392157 0.0705882 1 41.6992
+
+			texture_unit
+			{
+				texture Ben_Eye_Brown_Lores.jpg
+			}
+		}
+
+	}
+
+}
+
+
+
+material BenCasual_RightEyeIris
+{
+	technique
+	{
+		pass
+		{
+			ambient 0 0 0 1
+			specular 0.0392157 0.0392157 0.0705882 1 41.6992
+
+			texture_unit
+			{
+				texture Ben_Eye_Brown_Lores.jpg
+			}
+		}
+
+	}
+
+}
+
+
+
+material BenCasual_RightEyeOuter
+{
+	technique
+	{
+		pass
+		{
+			ambient 0 0 0 1
+			specular 1 1 1 1 56.4386
+			scene_blend add
+
+			texture_unit
+			{
+				texture Ben_Eye_Reflect.jpg
+				colour_op_ex add src_texture src_current
+				colour_op_multipass_fallback one one
+				env_map cubic_reflection
+			}
+
+			texture_unit
+			{
+				colour_op_ex blend_manual src_manual src_current 0.00999999 1 1 1
+				colour_op_multipass_fallback dest_colour zero
+				alpha_op_ex source1 src_manual src_current 0.00999999
+			}
+		}
+
+	}
+
+}
+
+
+
+material BenCasual_RightEyePupil
+{
+	technique
+	{
+		pass
+		{
+			ambient 0 0 0 1
+			specular 0 0 0 1 41.6992
+
+			texture_unit
+			{
+				texture Ben_Eye_Brown_Lores.jpg
+			}
+		}
+
+	}
+
+}
+
+
+
+material BenCasual_RightEyeWhite
+{
+	technique
+	{
+		pass
+		{
+			ambient 0 0 0 1
+			diffuse 0.8 0.8 0.8 1
+			specular 0.0392157 0.0392157 0.0705882 1 41.6992
+
+			texture_unit
+			{
+				texture Ben_Eye_Brown_Lores.jpg
+			}
+		}
+
+	}
+
+}
+
+
+
+material BenCasual_Teeth
+{
+	technique
+	{
+		pass
+		{
+			ambient 0 0 0 1
+			diffuse 0.8 0.8 0.8 1
+			specular 0.499992 0.499992 0.499992 1 41.6992
+		}
+
+	}
+
+}
+
+
+
+material BenCasual_ToeNails
+{
+	technique
+	{
+		pass
+		{
+			ambient 0 0 0 1
+			specular 0.0392157 0.0392157 0.0705882 1 49.0691
+
+			texture_unit
+			{
+				texture Ben_Body_Lores.jpg
+			}
+		}
+
+	}
+
+}
+
+
+
+material BenShoe_R_1_ben_shoe_r
+{
+	technique
+	{
+		pass
+		{
+			ambient 0 0 0 1
+			diffuse 0.988235 0.972549 0.972549 1
+			specular 0.0489761 0.0489761 0.0489761 1 56.4386
+
+			texture_unit
+			{
+				texture ben_shoeTEX_Lores.jpg
+			}
+		}
+
+	}
+
+}
+
+
+
+material BenShoe_R_1_eyelet
+{
+	technique
+	{
+		pass
+		{
+			ambient 0 0 0 1
+			diffuse 0.988235 0.972549 0.972549 1
+			specular 0.890196 0.890196 0.890196 1 17.3697
+
+			texture_unit
+			{
+				texture ben_shoeTEX_Lores.jpg
+			}
+		}
+
+	}
+
+}
+
+
+
+material BenShoe_R_1_sole
+{
+	technique
+	{
+		pass
+		{
+			ambient 0 0 0 1
+			diffuse 0.988235 0.972549 0.972549 1
+			specular 0.972549 0.972549 0.972549 1 33.2193
+
+			texture_unit
+			{
+				texture ben_shoeTEX_Lores.jpg
+			}
+		}
+
+	}
+
+}

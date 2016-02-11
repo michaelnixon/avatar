@@ -1,0 +1,13 @@
+Building the SmartBodyOgreViewer
+---------------------------------
+* Requirements (and assumed paths)
+    * SmartBody sources
+    * OgreSDK 1.9.0
+    * tinyxml 2.6.2
+    * boost 1.60.0
+-> if you use Visual Studio, all libraries must be compiled with the same version(!)
+
+* create Makefile (Linux) or Visual Studio project with:
+  cmake . or cmake-gui . 
+
+
